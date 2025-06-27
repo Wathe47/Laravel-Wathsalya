@@ -17,7 +17,10 @@ class VerifyCsrfToken extends Middleware
         '/books',
         '/books/*',
         '/orders',
-        '/orders/*'
+        '/orders/*',
+      //   '/customdb',
+      //   '/customdb/*',
+
       
     ];
 }

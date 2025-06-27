@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\OrderController;
+use App\Services\DatabaseConnector;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +38,10 @@ Route::delete("/books/{id}",[BookController::class,'deleteBook']);
 Route::get("/orders",[OrderController::class,'getAllOrders']);
 Route::post("/orders",[OrderController::class,'createOrder']);
 Route::delete("/orders/{id}",[OrderController::class,'deleteOrder']);
+
+// Route::post('/customdb/users', function(DatabaseConnector $db, Request $request){
+//    return $db->insertUsers($request->name,$request->email,$request->age);
+// });
+// Route::get('customdb/users/{age}', function(DatabaseConnector $db,$age){
+//    return $db->getUsersAboveAge($age);
+// });
