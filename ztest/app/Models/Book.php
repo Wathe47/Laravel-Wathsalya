@@ -4,17 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Book;
+use App\Models\User;
 
-class User extends Model
+class Book extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','email','age'];
+    protected $fillable = ["name","author"];
     public $timestamps = false;
 
-    public function books(){
-      return $this->belongsToMany(Book::class,'orders')
+    public function users(){
+      return $this->belongsToMany(User::class,'orders')
       ->withPivot('status','order_date')
-      ->withTimeStamps;
+      ->withTimeStamps();
     }
+
 }
